@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A Beautiful Jungle</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head> 
+  <body>
+	<div class="app">
+		<div class="welcome">
+			<h1>🦁 Welcome to the Jungle 🦁</h1>
+			<p>Click on Animals to learn more</p>
+		</div>
+        <div class="animal-squad">
+			<div class="tab animal" onclick="WolfSound()">🐺</div>
+			<div class="tab animal" onclick="lionsound()">🦁</div>
+			<div class="tab animal" onclick="elephantSound()">🐘</div>
+			<div class="tab animal" onclick="crocodileSound()">🐊</div>
+		</div>
+		<div>
+			<button class="btn" onclick="playJungleSound()">Play Jungle Music</button>
+			<button class="btn" onclick="pause()">Pause Jungle Music</button>
+        </div>
+		<div>
+            <!--Comment syntax-->
+			<!--Fun fact would go here-->
+		</div>
+	</div>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+body{
+    font-family: 'Roboto' , sans-serif;
+}
+
+.app {
+    border: 2px solid black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    text-align: center;
+}
+.welcome h1 {
+    font-size: 40px;
+}
+.welcome p {
+    font-size: 25px;
+}
+
+.animal-squad{
+    display: flex;
+    /* justify-content: space-around;
+    align-items: center ; */
+}
+
+.animal {
+    width: 100px;
+    height: 100px;
+    font-size: 3.5em;
+    border-radius: 25px;
+    text-align: center;
+   cursor: pointer;
+   margin: 10px;
+}
+
+/* Generic CSS*/
+
+.tab {
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 250px;
+  border-color: #2196f3;
+  color: dodgerblue;
+}
+.btn:hover {
+  background: #2196f3;
+  color: white;
+}
+
+
+
+function alertMe(){
+    alert('I have been clicked');
+}
+
+function WolfSound(){
+    const audio = new Audio("./sounds/wolf.mp3");
+    audio.play() ;
+     alert('I have been clicked');
+}
+
+function lionSound(){
+    const audio = new Audio("./sounds/lion.mp3");
+    audio.play() ;
+    
+}
+
+function elephantSound(){
+    const audio = new Audio("./sounds/elephant.mp3");
+    audio.play() ;
+}
+
+function crocodileSound(){
+    const audio = new Audio("./sounds/crocodile.mp3");
+    audio.play() ;
+}
+
+const audio = new Audio("./sounds/junglemusic.mp3");
+    
+function playJungleSound(){
+    audio.play() ;  
+}
+
+function pause(){
+    audio.pause();
+}
